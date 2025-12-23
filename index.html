@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python Master - Complete Interactive Learning Platform for Python Programming">
+    <title>🐍 Python Master - Complete Learning Platform</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ==================== LOADER ==================== -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo"><img src="python-logo.png" alt="Python" class="python-logo-img"></div>
+            <h2>Python Master</h2>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <p>Loading your learning adventure...</p>
+        </div>
+    </div>
+
+    <!-- ==================== FLOATING BACKGROUND ==================== -->
+    <div class="floating-bg">
+        <span class="float-icon">🐍</span>
+        <span class="float-icon">💻</span>
+        <span class="float-icon">🔥</span>
+        <span class="float-icon">⚡</span>
+        <span class="float-icon">🚀</span>
+        <span class="float-icon">📊</span>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="python-logo.png" alt="Python" class="nav-python-logo">
+                <span class="logo-text">Python<span class="highlight">Master</span></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#roadmap" class="nav-link"><i class="fas fa-road"></i> Roadmap</a></li>
+                <li><a href="#topics" class="nav-link"><i class="fas fa-book"></i> Topics</a></li>
+                <li><a href="#achievements" class="nav-link"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li><a href="#quiz" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="#careers" class="nav-link"><i class="fas fa-briefcase"></i> Careers</a></li>
+                <li><a href="#resources" class="nav-link"><i class="fas fa-link"></i> Resources</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Overall Progress Bar -->
+        <div class="nav-progress">
+            <div class="nav-progress-bar" id="overall-progress-bar"></div>
+        </div>
+    </nav>
+
+    <!-- ==================== STREAK COUNTER ==================== -->
+    <div class="streak-counter" id="streak-counter">
+        <span class="streak-icon">🔥</span>
+        <span class="streak-number" id="streak-number">0</span>
+        <span class="streak-label">Day Streak</span>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-3d-logo">
+                    <div class="logo-3d"><img src="python-logo.png" alt="Python" class="hero-python-logo"></div>
+                </div>
+                <h1 class="hero-title">
+                    Master <span class="gradient-text">Python</span> Programming
+                </h1>
+                <p class="hero-subtitle">
+                    Complete interactive learning platform with 10 modules, 50+ topics, quizzes, and achievements. Learn
+                    Python from zero to hero!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#topics" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Learning
+                    </a>
+                    <a href="#roadmap" class="btn btn-secondary">
+                        <i class="fas fa-map"></i> View Roadmap
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-number" id="total-topics">50+</div>
+                    <div class="stat-label">Topics</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎬</div>
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Videos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-number" id="completed-count">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" id="achievements-count">0</div>
+                    <div class="stat-label">Achievements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ROADMAP SECTION ==================== -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🗺️</span>
+                Learning Roadmap
+            </h2>
+            <p class="section-subtitle">Your journey to Python mastery in 8 phases</p>
+
+            <div class="roadmap-timeline">
+                <div class="roadmap-item" data-phase="1">
+                    <div class="roadmap-icon">🎯</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 1: Python Basics</h3>
+                        <span class="roadmap-duration">Week 1-2</span>
+                        <p>Variables, data types, operators, input/output, and basic syntax</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="2">
+                    <div class="roadmap-icon">🔀</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 2: Control Flow</h3>
+                        <span class="roadmap-duration">Week 2-3</span>
+                        <p>Conditionals, loops, break/continue, and match-case statements</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="3">
+                    <div class="roadmap-icon">⚡</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 3: Functions</h3>
+                        <span class="roadmap-duration">Week 3-4</span>
+                        <p>Defining functions, arguments, lambda, decorators, and scope</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="4">
+                    <div class="roadmap-icon">📊</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 4: Data Structures</h3>
+                        <span class="roadmap-duration">Week 4-5</span>
+                        <p>Lists, tuples, dictionaries, sets, and comprehensions</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="5">
+                    <div class="roadmap-icon">🏗️</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 5: OOP</h3>
+                        <span class="roadmap-duration">Week 5-6</span>
+                        <p>Classes, objects, inheritance, polymorphism, and encapsulation</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="6">
+                    <div class="roadmap-icon">📁</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 6: File & Error Handling</h3>
+                        <span class="roadmap-duration">Week 6-7</span>
+                        <p>File operations, JSON, exception handling, and logging</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="7">
+                    <div class="roadmap-icon">📦</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 7: Modules & Packages</h3>
+                        <span class="roadmap-duration">Week 7-8</span>
+                        <p>Importing, creating modules, pip, virtual environments</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-phase="8">
+                    <div class="roadmap-icon">🚀</div>
+                    <div class="roadmap-content">
+                        <h3>Phase 8: Advanced Python</h3>
+                        <span class="roadmap-duration">Week 8-10</span>
+                        <p>Generators, async programming, multithreading, and projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TOPICS SECTION ==================== -->
+    <section class="topics-section" id="topics">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">📚</span>
+                Learning Topics
+            </h2>
+            <p class="section-subtitle">Click checkboxes to track your progress</p>
+
+            <div class="topics-grid" id="topics-grid">
+                <!-- Topics will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACHIEVEMENTS SECTION ==================== -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🏆</span>
+                Achievements
+            </h2>
+            <p class="section-subtitle">Unlock badges as you learn!</p>
+
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- Achievements will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== QUIZ SECTION ==================== -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🧠</span>
+                Python Quiz
+            </h2>
+            <p class="section-subtitle">Test your knowledge at 4 difficulty levels!</p>
+
+            <div class="quiz-container" id="quiz-container">
+                <!-- Level Selection -->
+                <div class="quiz-levels" id="quiz-levels">
+                    <h3>Choose Your Level</h3>
+                    <p class="quiz-levels-subtitle">MCQ Quiz (50 questions) or Coding Quiz (Type answers)</p>
+
+                    <div class="quiz-levels-grid">
+                        <div class="quiz-level-card" data-level="basics" onclick="selectQuizLevel('basics')">
+                            <div class="level-icon">🟢</div>
+                            <div class="quiz-level-info">
+                                <h4>Basics</h4>
+                                <p>Variables, operators, strings, I/O</p>
+                                <div class="quiz-level-meta">
+                                    <span class="level-questions">📝 50 Questions</span>
+                                    <div class="level-best-score" id="best-score-basics">0%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-level-card" data-level="medium" onclick="selectQuizLevel('medium')">
+                            <div class="level-icon">🟡</div>
+                            <div class="quiz-level-info">
+                                <h4>Medium</h4>
+                                <p>Loops, functions, lists, dicts</p>
+                                <div class="quiz-level-meta">
+                                    <span class="level-questions">📝 50 Questions</span>
+                                    <div class="level-best-score" id="best-score-medium">0%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-level-card" data-level="hard" onclick="selectQuizLevel('hard')">
+                            <div class="level-icon">🟠</div>
+                            <div class="quiz-level-info">
+                                <h4>Hard</h4>
+                                <p>OOP, files, exceptions, modules</p>
+                                <div class="quiz-level-meta">
+                                    <span class="level-questions">📝 50 Questions</span>
+                                    <div class="level-best-score" id="best-score-hard">0%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-level-card" data-level="advanced" onclick="selectQuizLevel('advanced')">
+                            <div class="level-icon">🔴</div>
+                            <div class="quiz-level-info">
+                                <h4>Advanced</h4>
+                                <p>TCS NQT / Cognizant level</p>
+                                <div class="quiz-level-meta">
+                                    <span class="level-questions">📝 50 Questions</span>
+                                    <div class="level-best-score" id="best-score-advanced">0%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quiz-level-card" data-level="coding" onclick="selectQuizLevel('coding')">
+                            <div class="level-icon">⌨️</div>
+                            <div class="quiz-level-info">
+                                <h4>Coding Quiz</h4>
+                                <p>Type your answers - test real Python knowledge!</p>
+                                <div class="quiz-level-meta">
+                                    <span class="level-questions">💻 20 Questions</span>
+                                    <div class="level-best-score" id="best-score-coding">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Start (After Level Selected) -->
+                <div class="quiz-start hidden" id="quiz-start">
+                    <div class="quiz-info">
+                        <div class="selected-level-badge" id="selected-level-badge">🟢 Basics</div>
+                        <h3>Ready to test your Python skills?</h3>
+                        <p id="quiz-level-description">50 questions on Python fundamentals</p>
+                        <div class="quiz-best-score">
+                            <span>🏆 Best Score: </span>
+                            <span id="best-score">0%</span>
+                        </div>
+                    </div>
+                    <div class="quiz-start-buttons">
+                        <button class="btn btn-secondary" onclick="showLevelSelection()">
+                            <i class="fas fa-arrow-left"></i> Change Level
+                        </button>
+                        <button class="btn btn-primary" id="start-quiz">
+                            <i class="fas fa-play"></i> Start Quiz
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-game hidden" id="quiz-game">
+                    <div class="quiz-header">
+                        <div class="quiz-level-indicator" id="quiz-level-indicator">🟢 Basics</div>
+                        <div class="quiz-progress-info">
+                            <span>Question <span id="current-question">1</span>/<span
+                                    id="total-questions">50</span></span>
+                        </div>
+                        <div class="quiz-score-info">
+                            <span>Score: <span id="current-score">0</span></span>
+                        </div>
+                    </div>
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress" id="quiz-progress"></div>
+                    </div>
+                    <div class="quiz-question" id="quiz-question">
+                        <!-- Question will be inserted here -->
+                    </div>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options will be inserted here -->
+                    </div>
+                    <div class="quiz-buttons">
+                        <button class="btn btn-secondary" onclick="exitQuiz()">
+                            <i class="fas fa-arrow-left"></i> Exit Quiz
+                        </button>
+                        <button class="btn btn-primary hidden" id="next-question">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Coding Quiz Game (Input-based) -->
+                <div class="quiz-game hidden" id="coding-quiz-game">
+                    <div class="quiz-header">
+                        <div class="quiz-level-indicator" id="coding-level-indicator">⌨️ Coding Quiz</div>
+                        <div class="quiz-progress-info">
+                            <span>Question <span id="coding-current-question">1</span>/<span
+                                    id="coding-total-questions">20</span></span>
+                        </div>
+                        <div class="quiz-score-info">
+                            <span>Score: <span id="coding-current-score">0</span></span>
+                        </div>
+                    </div>
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress" id="coding-quiz-progress"></div>
+                    </div>
+                    <div class="quiz-question" id="coding-quiz-question">
+                        <!-- Question will be inserted here -->
+                    </div>
+                    <div class="coding-code-block" id="coding-code-block">
+                        <!-- Code snippet will be inserted here -->
+                    </div>
+                    <div class="coding-answer-section">
+                        <label for="coding-answer-input">Type your answer:</label>
+                        <input type="text" id="coding-answer-input" class="coding-answer-input"
+                            placeholder="Enter the output..." autocomplete="off">
+                        <button class="btn btn-primary" id="submit-coding-answer" onclick="submitCodingAnswer()">
+                            <i class="fas fa-check"></i> Submit Answer
+                        </button>
+                    </div>
+                    <div class="coding-feedback hidden" id="coding-feedback">
+                        <div class="feedback-icon" id="feedback-icon">✅</div>
+                        <div class="feedback-message" id="feedback-message">Correct!</div>
+                        <div class="feedback-answer" id="feedback-answer">
+                            <strong>Perfect Answer:</strong> <span id="perfect-answer"></span>
+                        </div>
+                    </div>
+                    <div class="quiz-buttons">
+                        <button class="btn btn-secondary" onclick="exitCodingQuiz()">
+                            <i class="fas fa-arrow-left"></i> Exit Quiz
+                        </button>
+                        <button class="btn btn-primary hidden" id="next-coding-question" onclick="nextCodingQuestion()">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quiz-result hidden" id="quiz-result">
+                    <div class="result-icon" id="result-icon">🎉</div>
+                    <h3 id="result-title">Great Job!</h3>
+                    <p id="result-text">You scored 80%</p>
+                    <div class="result-level" id="result-level">Level: Basics 🟢</div>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <span class="stat-value" id="correct-answers">24</span>
+                            <span class="stat-label">Correct</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-value" id="wrong-answers">6</span>
+                            <span class="stat-label">Wrong</span>
+                        </div>
+                    </div>
+                    <div class="result-buttons">
+                        <button class="btn btn-secondary" onclick="showLevelSelection()">
+                            <i class="fas fa-list"></i> All Levels
+                        </button>
+                        <button class="btn btn-primary" id="retry-quiz">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CAREER PATHS SECTION ==================== -->
+    <section class="career-section" id="careers">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">💼</span>
+                Career Paths
+            </h2>
+            <p class="section-subtitle">Python skills unlock these amazing career opportunities!</p>
+
+            <div class="career-grid" id="career-grid">
+                <!-- Career cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Modal -->
+    <div class="career-modal-overlay hidden" id="career-modal-overlay">
+        <div class="career-modal" id="career-modal">
+            <div class="career-modal-header">
+                <div class="career-modal-icon" id="career-modal-icon">🌐</div>
+                <div class="career-modal-title-wrapper">
+                    <h3 id="career-modal-title">Web Developer</h3>
+                    <span class="career-modal-salary" id="career-modal-salary">₹5-15 LPA</span>
+                </div>
+                <button class="career-modal-close" onclick="closeCareerModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="career-modal-body">
+                <p id="career-modal-description">Build dynamic websites and web applications</p>
+                <h4>🎯 Key Topics to Learn:</h4>
+                <div class="career-topics" id="career-modal-topics">
+                    <!-- Topics will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== RESOURCES SECTION ==================== -->
+    <section class="resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🔗</span>
+                Resources
+            </h2>
+            <p class="section-subtitle">Useful links to boost your learning</p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📖</div>
+                    <h3>Official Documentation</h3>
+                    <ul>
+                        <li><a href="https://docs.python.org/3/" target="_blank">Python Official Docs</a></li>
+                        <li><a href="https://peps.python.org/" target="_blank">Python PEPs</a></li>
+                        <li><a href="https://wiki.python.org/" target="_blank">Python Wiki</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎥</div>
+                    <h3>YouTube Channels</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/@programmingwithmosh" target="_blank">Programming with
+                                Mosh</a></li>
+                        <li><a href="https://www.youtube.com/@coraborale" target="_blank">Corey Schafer</a></li>
+                        <li><a href="https://www.youtube.com/@freaborle" target="_blank">freeCodeCamp</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💻</div>
+                    <h3>Practice Platforms</h3>
+                    <ul>
+                        <li><a href="https://www.hackerrank.com/domains/python" target="_blank">HackerRank Python</a>
+                        </li>
+                        <li><a href="https://leetcode.com/" target="_blank">LeetCode</a></li>
+                        <li><a href="https://www.codewars.com/" target="_blank">Codewars</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Free Python Books 📖</h3>
+                    <ul>
+                        <li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff
+                                (Free Online)</a></li>
+                        <li><a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf" target="_blank">Think
+                                Python 2e (PDF)</a></li>
+                        <li><a href="https://python.swaroopch.com/" target="_blank">A Byte of Python (Free)</a></li>
+                        <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Python Official Tutorial</a>
+                        </li>
+                        <li><a href="https://www.py4e.com/book" target="_blank">Python for Everybody (PDF)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="python-logo.png" alt="Python" class="footer-python-logo">
+                    <span class="logo-text">Python<span class="highlight">Master</span></span>
+                </div>
+                <p class="footer-text">Made with ❤️ for Python enthusiasts</p>
+                <div class="footer-actions">
+                    <button class="btn btn-outline" id="export-progress">
+                        <i class="fas fa-download"></i> Export Progress
+                    </button>
+                    <button class="btn btn-outline" id="import-progress">
+                        <i class="fas fa-upload"></i> Import Progress
+                    </button>
+                    <button class="btn btn-danger" id="reset-progress">
+                        <i class="fas fa-trash"></i> Reset Progress
+                    </button>
+                </div>
+                <div class="footer-shortcuts">
+                    <p>Keyboard Shortcuts: <kbd>ESC</kbd> Close Modal | <kbd>?</kbd> Random Tip | <kbd>→</kbd> Next
+                        Question</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Python Master. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL ==================== -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Topic Title</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FAB (Floating Action Button) ==================== -->
+    <button class="fab" id="fab-tip" title="Get a random tip">
+        <i class="fas fa-lightbulb"></i>
+    </button>
+
+    <!-- ==================== TOAST CONTAINER ==================== -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ==================== CONFETTI CANVAS ==================== -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="import-file" accept=".json" style="display: none;">
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
